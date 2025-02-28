@@ -1,24 +1,29 @@
--- Import data from departments.csv
+-- Import data from departments.csv into Departments table
 COPY Departments(dep_no, dept_name)
 FROM '../data/departments.csv'
 WITH (FORMAT csv, HEADER true, DELIMITER ',');
 
+-- Import data from dept_emp.csv into DepartmentEmployee table
 COPY DepartmentEmployee(emp_no, dept_no)
 FROM '../data/dept_emp.csv'
 WITH (FORMAT csv, HEADER true, DELIMITER ',');
 
+-- Import data from dept_manager.csv into DepartmentManager table
 COPY DepartmentManager(dept_no, emp_no)
 FROM '../data/dept_manager.csv'
 WITH (FORMAT csv, HEADER true, DELIMITER ',');
 
+-- Import data from employees.csv into Employees table
 COPY Employees(emp_no, emp_title_id, birth_date, first_name, last_name, sex, hire_date)
 FROM '../data/employees.csv'
 WITH (FORMAT csv, HEADER true, DELIMITER ',');
 
+-- Import data from salaries.csv into Salaries table
 COPY Salaries(emp_no, salary)
 FROM '../data/salaries.csv'
 WITH (FORMAT csv, HEADER true, DELIMITER ',');
 
+-- Import data from titles.csv into Titles table
 COPY Titles(title_id, title)
 FROM '../data/titles.csv'
 WITH (FORMAT csv, HEADER true, DELIMITER ',');
