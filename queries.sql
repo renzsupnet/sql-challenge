@@ -1,3 +1,4 @@
+-- Import data from departments.csv
 COPY Departments(dep_no, dept_name)
 FROM '../data/departments.csv'
 WITH (FORMAT csv, HEADER true, DELIMITER ',');
@@ -7,19 +8,19 @@ FROM '../data/dept_emp.csv'
 WITH (FORMAT csv, HEADER true, DELIMITER ',');
 
 COPY DepartmentManager(dept_no, emp_no)
-FROM 'path/to/dept_manager.csv'
+FROM '../data/dept_manager.csv'
 WITH (FORMAT csv, HEADER true, DELIMITER ',');
 
 COPY Employees(emp_no, emp_title_id, birth_date, first_name, last_name, sex, hire_date)
-FROM 'path/to/employees.csv'
+FROM '../data/employees.csv'
 WITH (FORMAT csv, HEADER true, DELIMITER ',');
 
 COPY Salaries(emp_no, salary)
-FROM 'path/to/titles.csv'
+FROM '../data/salaries.csv'
 WITH (FORMAT csv, HEADER true, DELIMITER ',');
 
 COPY Titles(title_id, title)
-FROM 'path/to/titles.csv'
+FROM '../data/titles.csv'
 WITH (FORMAT csv, HEADER true, DELIMITER ',');
 
 
