@@ -28,9 +28,6 @@ COPY Titles(title_id, title)
 FROM '../data/titles.csv'
 WITH (FORMAT csv, HEADER true, DELIMITER ',');
 
-
-
-
 -- List the employee number, last name, first name, sex, and salary of each employee
 SELECT e.emp_no, e.last_name, e.first_name, e.sex, s.salary
 FROM Employees e
