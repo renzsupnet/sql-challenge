@@ -11,6 +11,11 @@ CREATE TABLE Departments(
     dept_name VARCHAR(25) NOT NULL
 )
 
+CREATE TABLE Titles(
+    title_id VARCHAR(10) PRIMARY KEY,
+    title VARCHAR(30) NOT NULL
+)
+
 CREATE TABLE Employees(
     emp_no INTEGER PRIMARY KEY,
     emp_title_id VARCHAR(25) NOT NULL,
@@ -50,7 +55,3 @@ CREATE TABLE Salaries(
     REFERENCES Employees(emp_no)
 )
 
-CREATE TABLE Titles(
-    title_id VARCHAR(10) PRIMARY KEY,
-    title VARCHAR(30) NOT NULL
-)
