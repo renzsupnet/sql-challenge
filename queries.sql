@@ -1,3 +1,30 @@
+COPY Departments(dep_no, dept_name)
+FROM '../data/departments.csv'
+WITH (FORMAT csv, HEADER true, DELIMITER ',');
+
+COPY DepartmentEmployee(emp_no, dept_no)
+FROM '../data/dept_emp.csv'
+WITH (FORMAT csv, HEADER true, DELIMITER ',');
+
+COPY DepartmentManager(dept_no, emp_no)
+FROM 'path/to/dept_manager.csv'
+WITH (FORMAT csv, HEADER true, DELIMITER ',');
+
+COPY Employees(emp_no, emp_title_id, birth_date, first_name, last_name, sex, hire_date)
+FROM 'path/to/employees.csv'
+WITH (FORMAT csv, HEADER true, DELIMITER ',');
+
+COPY Salaries(emp_no, salary)
+FROM 'path/to/titles.csv'
+WITH (FORMAT csv, HEADER true, DELIMITER ',');
+
+COPY Titles(title_id, title)
+FROM 'path/to/titles.csv'
+WITH (FORMAT csv, HEADER true, DELIMITER ',');
+
+
+
+
 -- List the employee number, last name, first name, sex, and salary of each employee
 SELECT e.emp_no, e.last_name, e.first_name, e.sex, s.salary
 FROM Employees e
